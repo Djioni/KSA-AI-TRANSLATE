@@ -387,7 +387,7 @@ app.post(
       const brandLight = (req.body.brandLight as string) || "#FFFFFF";
       const minContrast = (req.body.minContrast as string) || "4.5";
       const flipDirectionalIcons = req.body.flipDirectionalIcons !== "false";
-      const snapIcons = req.body.snapIcons !== "false";
+      const snapIcons = req.body.snapIcons === "true";  // Disabled by default (can break layout)
       const apiKey = (req.body.apiKey as string) || process.env.OPENAI_API_KEY;
 
       // Create dependency flow: V → D → T (inverted because parent waits for children in BullMQ)

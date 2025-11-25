@@ -102,21 +102,22 @@ const agentTQueue = new bullmq_1.Queue("agent-t", { connection });
 const agentDQueue = new bullmq_1.Queue("agent-d", { connection });
 const agentVQueue = new bullmq_1.Queue("agent-v", { connection });
 const flowProducer = new bullmq_1.FlowProducer({ connection });
-// ========== Worker: Agent T (Translation + RTL) ==========
+// ========== Worker: Agent T (Translation + RTL) - LangGraph Pipeline ==========
 const agentTWorker = new bullmq_1.Worker("agent-t", async (job) => {
     const { jobId } = job.data;
     const jobDir = getJobDir(jobId);
     const manifest = readManifest(jobId);
-    console.log(`[Agent T] Processing job ${jobId}`);
+    console.log(`[Agent T] Processing job ${jobId} with LangGraph pipeline`);
     try {
         updateManifest(jobId, { status: "running_agent_t" });
         const inputPptx = manifest.input.pptx;
         const mapJson = manifest.input.map;
         const outputPptx = path.join(jobDir, "rtl.pptx");
-        const transformerScript = path.join(PROJECT_ROOT, "rtl_pptx_transformer.py");
+        // Use LangGraph multi-agent pipeline
+        const pipelineScript = path.join(PROJECT_ROOT, "graph_rtl_pipeline.py");
         const args = [
-            transformerScript,
-            "transform",
+            pipelineScript,
+            "--in",
             inputPptx,
             "--out",
             outputPptx,
@@ -124,14 +125,13 @@ const agentTWorker = new bullmq_1.Worker("agent-t", async (job) => {
             "--flip-icons", // Flip directional icons
             "--arabic-font", "Noto Naskh Arabic", // Apply Arabic font
             "--arabic-digits", // Convert to Arabic-Indic digits (٠-٩)
-            "--no-contrast-fix", // Disable Agent T's contrast fix (Agent D handles this)
         ];
         if (mapJson) {
             args.push("--map", mapJson);
         }
         const result = await runPython(args, jobDir);
         if (result.code !== 0) {
-            const error = `Agent T failed: ${result.stderr || result.stdout}`;
+            const error = `Agent T (LangGraph) failed: ${result.stderr || result.stdout}`;
             manifest.errors.push(error);
             updateManifest(jobId, { errors: manifest.errors, status: "failed_agent_t" });
             throw new Error(error);
@@ -141,7 +141,8 @@ const agentTWorker = new bullmq_1.Worker("agent-t", async (job) => {
             outputs: manifest.outputs,
             status: "completed_agent_t"
         });
-        console.log(`[Agent T] Completed job ${jobId}`);
+        console.log(`[Agent T] Completed job ${jobId} - LangGraph pipeline succeeded`);
+        console.log(`[Agent T] Pipeline logs:\n${result.stdout}`);
         return { rtlPath: outputPptx };
     }
     catch (error) {
@@ -325,7 +326,7 @@ app.post("/submit", upload.fields([
         const brandLight = req.body.brandLight || "#FFFFFF";
         const minContrast = req.body.minContrast || "4.5";
         const flipDirectionalIcons = req.body.flipDirectionalIcons !== "false";
-        const snapIcons = req.body.snapIcons !== "false";
+        const snapIcons = req.body.snapIcons === "true"; // Disabled by default (can break layout)
         const apiKey = req.body.apiKey || process.env.OPENAI_API_KEY;
         // Create dependency flow: V → D → T (inverted because parent waits for children in BullMQ)
         // Agent T is the parent and runs LAST (after children complete)
