@@ -475,77 +475,217 @@ def node_recover(state: PipelineState, config: RunnableConfig) -> PipelineState:
 def node_fix_icon_text_overlap(state: PipelineState, config: RunnableConfig) -> PipelineState:
     """
     Fix overlapping between icons and their text labels after mirroring.
-    Detects icon-text pairs and adjusts spacing.
+    DYNAMIC solution that preserves alignment groups (pyramid/staircase designs).
+
+    Strategy:
+    1. Detect alignment groups from ORIGINAL file (before transformations)
+    2. For overlaps, MOVE ICONS instead of shrinking aligned text (preserves design)
+    3. Only shrink text if icon can't be moved without going off-slide
     """
-    state.logs.append("[overlap] fixing icon-text overlaps after mirroring...")
+    state.logs.append("[overlap] fixing icon-text overlaps while preserving visual alignment...")
 
     try:
+        prs_orig = Presentation(state.original_pptx_copy)
         prs = Presentation(state.current_pptx)
         fixed_count = 0
+        slide_width = emu(prs.slide_width)
 
-        for s_i, slide in enumerate(prs.slides, start=1):
-            shapes = list(slide.shapes)
+        for s_i, slide_pair in enumerate(zip(prs_orig.slides, prs.slides), start=1):
+            slide_orig, slide_rtl = slide_pair
 
-            # Identify potential icon-text pairs by proximity
-            for i, shape1 in enumerate(shapes):
-                if not hasattr(shape1, 'text_frame'):
-                    continue
+            # === STEP 1: Detect alignment groups in ORIGINAL file ===
+            ALIGNMENT_TOLERANCE = 180000  # 0.5cm
 
-                text1 = shape1.text.strip()
-                if not text1:
-                    continue
+            # Build shape ID to shape mapping for original
+            orig_shapes_by_id = {}
+            for shp in slide_orig.shapes:
+                if hasattr(shp, 'left') and hasattr(shp, 'text_frame') and shp.text.strip():
+                    orig_shapes_by_id[shp.shape_id] = shp
 
-                # Look for nearby shapes (icons/graphics)
-                for j, shape2 in enumerate(shapes):
-                    if i == j:
-                        continue
+            # Detect shapes with same LEFT edge in original (LTR)
+            left_edges = {}
+            for shp_id, shp in orig_shapes_by_id.items():
+                shp_left = emu(shp.left)
+                found_group = False
+                for group_left in list(left_edges.keys()):
+                    if abs(shp_left - group_left) < ALIGNMENT_TOLERANCE:
+                        left_edges[group_left].append(shp_id)
+                        found_group = True
+                        break
+                if not found_group:
+                    left_edges[shp_left] = [shp_id]
 
-                    # Check if shape2 is likely an icon (picture, autoshape, no text)
-                    is_icon = (
-                        shape2.shape_type in [MSO_SHAPE_TYPE.PICTURE, MSO_SHAPE_TYPE.AUTO_SHAPE] or
-                        (hasattr(shape2, 'text_frame') and not shape2.text.strip())
-                    )
+            # Find alignment groups (3+ shapes with same left edge)
+            aligned_shape_ids = set()
+            for group in left_edges.values():
+                if len(group) >= 3:  # 3+ shapes aligned = intentional design
+                    aligned_shape_ids.update(group)
 
-                    if not is_icon:
-                        continue
+            if aligned_shape_ids:
+                state.logs.append(f"[overlap] Detected {len(aligned_shape_ids)} shapes in alignment groups")
 
-                    # Calculate overlap
-                    s1_left, s1_top, s1_right, s1_bottom = (
-                        emu(shape1.left),
-                        emu(shape1.top),
-                        emu(shape1.left + shape1.width),
-                        emu(shape1.top + shape1.height)
-                    )
-                    s2_left, s2_top, s2_right, s2_bottom = (
-                        emu(shape2.left),
-                        emu(shape2.top),
-                        emu(shape2.left + shape2.width),
-                        emu(shape2.top + shape2.height)
-                    )
+            # === STEP 2: Process overlaps in RTL file ===
+            shapes_rtl = list(slide_rtl.shapes)
+
+            # Build list of icons
+            icons = []
+            for shp in shapes_rtl:
+                is_icon = (
+                    shp.shape_type in [MSO_SHAPE_TYPE.PICTURE, MSO_SHAPE_TYPE.AUTO_SHAPE] and
+                    not (hasattr(shp, 'text_frame') and shp.text.strip())
+                )
+                if is_icon and hasattr(shp, 'left'):
+                    icons.append(shp)
+
+            # Build list of text boxes with their alignment status
+            text_boxes = []
+            for shp in shapes_rtl:
+                if hasattr(shp, 'text_frame') and shp.text.strip() and hasattr(shp, 'left'):
+                    text_boxes.append(shp)
+
+            # === STEP 3: Collect overlap info and group-level constraints ===
+            # First pass: identify all overlaps and required adjustments
+            overlap_info = []  # List of (text_box, icon, is_aligned, required_adjustment)
+
+            for text_box in text_boxes:
+                tb_left = emu(text_box.left)
+                tb_right = tb_left + emu(text_box.width)
+                tb_top = emu(text_box.top)
+                tb_bottom = tb_top + emu(text_box.height)
+                tb_vcenter = (tb_top + tb_bottom) / 2
+
+                # Check if text_box is part of an alignment group (by shape ID)
+                is_aligned = text_box.shape_id in aligned_shape_ids
+
+                for icon in icons:
+                    icon_left = emu(icon.left)
+                    icon_right = icon_left + emu(icon.width)
+                    icon_top = emu(icon.top)
+                    icon_bottom = icon_top + emu(icon.height)
+                    icon_vcenter = (icon_top + icon_bottom) / 2
+
+                    # Check if vertically aligned (same row)
+                    v_diff = abs(tb_vcenter - icon_vcenter)
+                    if v_diff > emu(text_box.height) * 0.6:
+                        continue  # Not in the same row
 
                     # Check for horizontal overlap
-                    h_overlap = max(0, min(s1_right, s2_right) - max(s1_left, s2_left))
+                    h_overlap = max(0, min(tb_right, icon_right) - max(tb_left, icon_left))
 
-                    # Check for vertical alignment (same row)
-                    v_center1 = (s1_top + s1_bottom) / 2
-                    v_center2 = (s2_top + s2_bottom) / 2
-                    v_diff = abs(v_center1 - v_center2)
+                    if h_overlap > 0:
+                        margin = 200000  # 0.56 cm spacing
+                        overlap_info.append({
+                            'text_box': text_box,
+                            'icon': icon,
+                            'is_aligned': is_aligned,
+                            'tb_left': tb_left,
+                            'icon_left': icon_left,
+                            'icon_width': emu(icon.width),
+                            'margin': margin
+                        })
 
-                    # If overlapping and vertically aligned, fix spacing
-                    if h_overlap > 0 and v_diff < emu(shape1.height) * 0.5:
-                        # Determine which is left/right
-                        if s1_left < s2_left:
-                            # shape1 (text) is on left, shape2 (icon) is on right
-                            # Move icon further right with margin
-                            margin = Emu(int(emu(shape1.height) * 0.2))  # 20% of text height
-                            shape2.left = Emu(s1_right + int(margin))
-                        else:
-                            # shape2 (icon) is on left, shape1 (text) is on right
-                            # Move text further right with margin
-                            margin = Emu(int(emu(shape2.height) * 0.2))
-                            shape1.left = Emu(s2_right + int(margin))
+            # === STEP 4: Group-aware resolution ===
+            # If multiple aligned boxes have overlaps, shrink them ALL by the max needed amount
+            aligned_overlaps = [o for o in overlap_info if o['is_aligned']]
+            non_aligned_overlaps = [o for o in overlap_info if not o['is_aligned']]
 
+            if aligned_overlaps:
+                # Calculate max shrinkage needed across all aligned boxes
+                max_shrink = 0
+                for overlap in aligned_overlaps:
+                    new_icon_left = emu(overlap['text_box'].left) + emu(overlap['text_box'].width) + overlap['margin']
+
+                    # Can icon move?
+                    if new_icon_left + overlap['icon_width'] <= slide_width:
+                        # Icon can move - no shrinkage needed for this one
+                        overlap['icon'].left = Emu(int(new_icon_left))
                         fixed_count += 1
+                        state.logs.append(
+                            f"[overlap] Moved icon '{overlap['icon'].name}' right to preserve alignment"
+                        )
+                    else:
+                        # Icon can't move - calculate required shrinkage
+                        required_width = overlap['icon_left'] - overlap['tb_left'] - overlap['margin']
+                        current_width = emu(overlap['text_box'].width)
+                        shrink_amount = current_width - required_width
+                        max_shrink = max(max_shrink, shrink_amount)
+
+                # If any aligned box needs shrinking, shrink ALL aligned boxes by the same amount
+                if max_shrink > 0:
+                    state.logs.append(
+                        f"[overlap] Applying uniform shrinkage of {max_shrink:,} EMU "
+                        f"({max_shrink/360000:.2f} cm) to {len(aligned_shape_ids)} aligned boxes "
+                        f"to preserve visual hierarchy"
+                    )
+
+                    for shp_id in aligned_shape_ids:
+                        # Find this shape in RTL slide
+                        for shp in text_boxes:
+                            if shp.shape_id == shp_id:
+                                old_width = emu(shp.width)
+                                new_width = old_width - max_shrink
+                                if new_width > 0:
+                                    shp.width = Emu(int(new_width))
+                                    fixed_count += 1
+                                break
+
+            # Process non-aligned overlaps normally (individual shrinking is fine)
+            for overlap in non_aligned_overlaps:
+                new_width = overlap['icon_left'] - overlap['tb_left'] - overlap['margin']
+                if new_width > 0 and new_width < emu(overlap['text_box'].width):
+                    overlap['text_box'].width = Emu(int(new_width))
+                    fixed_count += 1
+                    state.logs.append(
+                        f"[overlap] Shrunk non-aligned '{overlap['text_box'].name}' individually"
+                    )
+
+            # === STEP 5: FINAL PASS - Ensure ALL icons are positioned to the right of text ===
+            # After alignment adjustments, move any remaining overlapping icons
+            state.logs.append("[overlap] Final pass: positioning all icons to avoid overlaps...")
+
+            for icon in icons:
+                icon_left = emu(icon.left)
+                icon_width = emu(icon.width)
+                icon_top = emu(icon.top)
+                icon_bottom = icon_top + emu(icon.height)
+                icon_vcenter = (icon_top + icon_bottom) / 2
+
+                # Find all text boxes that could overlap with this icon (vertically aligned)
+                conflicting_texts = []
+                for text_box in text_boxes:
+                    tb_top = emu(text_box.top)
+                    tb_bottom = tb_top + emu(text_box.height)
+                    tb_vcenter = (tb_top + tb_bottom) / 2
+
+                    # Check vertical alignment
+                    v_diff = abs(icon_vcenter - tb_vcenter)
+                    if v_diff < emu(text_box.height) * 0.6:
+                        # Check horizontal overlap
+                        tb_right = emu(text_box.left) + emu(text_box.width)
+                        if icon_left < tb_right:  # Icon starts before text ends = potential overlap
+                            conflicting_texts.append((text_box, tb_right))
+
+                # If icon overlaps any text, move it to the right of the rightmost text
+                if conflicting_texts:
+                    rightmost_text_edge = max(tb_right for _, tb_right in conflicting_texts)
+                    margin = 200000  # 0.56cm
+                    new_icon_left = rightmost_text_edge + margin
+
+                    # If icon would go off-slide, place it at the rightmost position that fits
+                    if new_icon_left + icon_width > slide_width:
+                        new_icon_left = slide_width - icon_width
+                        state.logs.append(
+                            f"[overlap] Icon '{icon.name}' would go off-slide, placing at right edge"
+                        )
+
+                    # Only move if it improves the situation (moves icon to the right)
+                    if new_icon_left > icon_left:
+                        icon.left = Emu(int(new_icon_left))
+                        fixed_count += 1
+                        state.logs.append(
+                            f"[overlap] Moved icon '{icon.name}' to {new_icon_left/360000:.1f}cm "
+                            f"(text ends at {rightmost_text_edge/360000:.1f}cm)"
+                        )
 
         # Save adjusted presentation
         out_adjusted = Path(state.work_dir) / "rtl_overlap_fixed.pptx"
@@ -555,7 +695,7 @@ def node_fix_icon_text_overlap(state: PipelineState, config: RunnableConfig) -> 
         prs_check = Presentation(state.current_pptx)
         state.current_index = build_shape_index(prs_check)
 
-        state.logs.append(f"[overlap] fixed {fixed_count} icon-text overlaps")
+        state.logs.append(f"[overlap] fixed {fixed_count} icon-text overlaps (alignment-aware)")
 
     except Exception as e:
         state.logs.append(f"[overlap] ERROR: {str(e)[:200]}")
@@ -1040,6 +1180,7 @@ def build_graph(checkpoint_path: Optional[str] = None):
     g.add_node("transform", node_apply_transform)
     g.add_node("validate", node_validate)
     g.add_node("recover", node_recover)
+    g.add_node("fix_overlap", node_fix_icon_text_overlap)  # NEW: Fix text-icon overlaps
     g.add_node("colors", node_preserve_colors)
     g.add_node("validate_translations", node_validate_translations)
     g.add_node("vision_overlap", node_vision_overlap_fix)
@@ -1048,8 +1189,9 @@ def build_graph(checkpoint_path: Optional[str] = None):
     g.add_edge(START, "snapshot")
     g.add_edge("snapshot", "transform")
     g.add_edge("transform", "validate")
-    g.add_conditional_edges("validate", route_validate, {"recover": "recover", "finalize": "colors"})
+    g.add_conditional_edges("validate", route_validate, {"recover": "recover", "finalize": "fix_overlap"})
     g.add_edge("recover", "validate")
+    g.add_edge("fix_overlap", "colors")  # NEW: Run overlap fix before color preservation
     g.add_edge("colors", "validate_translations")
     g.add_edge("validate_translations", "vision_overlap")
     g.add_edge("vision_overlap", "finalize")
