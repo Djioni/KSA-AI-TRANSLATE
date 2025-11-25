@@ -1,0 +1,17 @@
+{
+  "jobId": "qSm5diUPdIbNakFLcMYij",
+  "createdAt": "2025-10-22T15:27:23.825Z",
+  "status": "completed",
+  "input": {
+    "pptx": "/Users/djioni/KSA-AI-TRANSLATE/jobs/qSm5diUPdIbNakFLcMYij/input.pptx",
+    "map": "/Users/djioni/KSA-AI-TRANSLATE/jobs/qSm5diUPdIbNakFLcMYij/map.json"
+  },
+  "outputs": {
+    "rtl": "/Users/djioni/KSA-AI-TRANSLATE/jobs/qSm5diUPdIbNakFLcMYij/rtl.pptx",
+    "design": "/Users/djioni/KSA-AI-TRANSLATE/jobs/qSm5diUPdIbNakFLcMYij/design.pptx",
+    "audit": "/Users/djioni/KSA-AI-TRANSLATE/jobs/qSm5diUPdIbNakFLcMYij/audit.json",
+    "ocrReport": "/Users/djioni/KSA-AI-TRANSLATE/jobs/qSm5diUPdIbNakFLcMYij/ocr_report.json",
+    "visionReport": "/Users/djioni/KSA-AI-TRANSLATE/jobs/qSm5diUPdIbNakFLcMYij/vision_report.json"
+  },
+  "errors": []
+}

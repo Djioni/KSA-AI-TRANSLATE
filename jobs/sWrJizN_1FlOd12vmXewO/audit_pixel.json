@@ -1,0 +1,298 @@
+[
+  {
+    "slide": 1,
+    "shape_id": 29,
+    "name": "Rectangle: Rounded Corners 28",
+    "bbox_px": [
+      119,
+      1988,
+      2894,
+      2250
+    ],
+    "measured_fg": [
+      234,
+      239,
+      241
+    ],
+    "measured_bg": [
+      242,
+      242,
+      242
+    ],
+    "ratio_before": 1.036,
+    "ratio_after": 13.033,
+    "fixed_contrast": true,
+    "applied_color": [
+      13,
+      42,
+      71
+    ],
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 28,
+    "name": "Rectangle: Rounded Corners 27",
+    "bbox_px": [
+      119,
+      543,
+      2894,
+      1016
+    ],
+    "measured_fg": [
+      234,
+      239,
+      241
+    ],
+    "measured_bg": [
+      242,
+      242,
+      242
+    ],
+    "ratio_before": 1.036,
+    "ratio_after": 13.033,
+    "fixed_contrast": true,
+    "applied_color": [
+      13,
+      42,
+      71
+    ],
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 2,
+    "name": "Title 1",
+    "bbox_px": [
+      194,
+      0,
+      3881,
+      278
+    ],
+    "measured_fg": [
+      21,
+      52,
+      90
+    ],
+    "measured_bg": [
+      255,
+      255,
+      255
+    ],
+    "ratio_before": 12.569,
+    "ratio_after": 12.569,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 257,
+    "name": "TextBox 256",
+    "bbox_px": [
+      1624,
+      345,
+      3881,
+      420
+    ],
+    "measured_fg": [
+      21,
+      52,
+      90
+    ],
+    "measured_bg": [
+      255,
+      255,
+      255
+    ],
+    "ratio_before": 12.569,
+    "ratio_after": 12.569,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 13,
+    "name": "Rectangle 12",
+    "bbox_px": [
+      1950,
+      1676,
+      3805,
+      1995
+    ],
+    "measured_fg": [
+      255,
+      255,
+      255
+    ],
+    "measured_bg": [
+      242,
+      242,
+      242
+    ],
+    "ratio_before": 1.119,
+    "ratio_after": 13.033,
+    "fixed_contrast": true,
+    "applied_color": [
+      13,
+      42,
+      71
+    ],
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 15,
+    "name": "Isosceles Triangle 14",
+    "bbox_px": [
+      1950,
+      1008,
+      3806,
+      1481
+    ],
+    "measured_fg": [
+      21,
+      52,
+      90
+    ],
+    "measured_bg": [
+      242,
+      242,
+      242
+    ],
+    "ratio_before": 11.228,
+    "ratio_after": 11.228,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 16,
+    "name": "Rectangle 15",
+    "bbox_px": [
+      2274,
+      1474,
+      3296,
+      1683
+    ],
+    "measured_fg": [
+      255,
+      255,
+      255
+    ],
+    "measured_bg": [
+      255,
+      255,
+      255
+    ],
+    "ratio_before": 1.0,
+    "ratio_after": 14.591,
+    "fixed_contrast": true,
+    "applied_color": [
+      13,
+      42,
+      71
+    ],
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 18,
+    "name": "Rectangle 17",
+    "bbox_px": [
+      194,
+      1008,
+      1841,
+      1312
+    ],
+    "measured_fg": [
+      21,
+      52,
+      90
+    ],
+    "measured_bg": [
+      242,
+      242,
+      242
+    ],
+    "ratio_before": 11.228,
+    "ratio_after": 11.228,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 22,
+    "name": "Rectangle 21",
+    "bbox_px": [
+      196,
+      1447,
+      1843,
+      1702
+    ],
+    "measured_fg": [
+      0,
+      115,
+      175
+    ],
+    "measured_bg": [
+      242,
+      242,
+      242
+    ],
+    "ratio_before": 4.607,
+    "ratio_after": 4.607,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 27,
+    "name": "Rectangle 26",
+    "bbox_px": [
+      170,
+      1305,
+      1841,
+      1438
+    ],
+    "measured_fg": [
+      0,
+      115,
+      175
+    ],
+    "measured_bg": [
+      242,
+      242,
+      242
+    ],
+    "ratio_before": 4.607,
+    "ratio_after": 4.607,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  }
+]

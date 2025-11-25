@@ -1,0 +1,322 @@
+[
+  {
+    "slide": 1,
+    "shape_id": 30,
+    "name": "Rectangle: Rounded Corners 29",
+    "fixed_contrast": true,
+    "snapped_icon": false,
+    "flipped_icon": false,
+    "rtl_enforced": true,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 31,
+    "name": "Rectangle: Rounded Corners 30",
+    "fixed_contrast": true,
+    "snapped_icon": false,
+    "flipped_icon": false,
+    "rtl_enforced": true,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 29,
+    "name": "Rectangle: Rounded Corners 28",
+    "fixed_contrast": true,
+    "snapped_icon": false,
+    "flipped_icon": false,
+    "rtl_enforced": true,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 28,
+    "name": "Rectangle: Rounded Corners 27",
+    "fixed_contrast": true,
+    "snapped_icon": false,
+    "flipped_icon": false,
+    "rtl_enforced": true,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 2,
+    "name": "Title 1",
+    "fixed_contrast": false,
+    "snapped_icon": false,
+    "flipped_icon": false,
+    "rtl_enforced": true,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 257,
+    "name": "TextBox 256",
+    "fixed_contrast": false,
+    "snapped_icon": false,
+    "flipped_icon": false,
+    "rtl_enforced": true,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 12,
+    "name": "Rectangle 11",
+    "fixed_contrast": true,
+    "snapped_icon": false,
+    "flipped_icon": false,
+    "rtl_enforced": true,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 13,
+    "name": "Rectangle 12",
+    "fixed_contrast": true,
+    "snapped_icon": false,
+    "flipped_icon": false,
+    "rtl_enforced": true,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 15,
+    "name": "Isosceles Triangle 14",
+    "fixed_contrast": true,
+    "snapped_icon": false,
+    "flipped_icon": false,
+    "rtl_enforced": true,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 16,
+    "name": "Rectangle 15",
+    "fixed_contrast": true,
+    "snapped_icon": false,
+    "flipped_icon": false,
+    "rtl_enforced": true,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 17,
+    "name": "Rectangle 16",
+    "fixed_contrast": true,
+    "snapped_icon": false,
+    "flipped_icon": false,
+    "rtl_enforced": true,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 18,
+    "name": "Rectangle 17",
+    "fixed_contrast": false,
+    "snapped_icon": false,
+    "flipped_icon": false,
+    "rtl_enforced": true,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 21,
+    "name": "Rectangle 20",
+    "fixed_contrast": false,
+    "snapped_icon": false,
+    "flipped_icon": false,
+    "rtl_enforced": true,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 22,
+    "name": "Rectangle 21",
+    "fixed_contrast": false,
+    "snapped_icon": false,
+    "flipped_icon": false,
+    "rtl_enforced": true,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 27,
+    "name": "Rectangle 26",
+    "fixed_contrast": false,
+    "snapped_icon": false,
+    "flipped_icon": false,
+    "rtl_enforced": true,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 30,
+    "name": "Rectangle: Rounded Corners 29",
+    "fixed_contrast": false,
+    "snapped_icon": true,
+    "flipped_icon": false,
+    "rtl_enforced": false,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 31,
+    "name": "Rectangle: Rounded Corners 30",
+    "fixed_contrast": false,
+    "snapped_icon": true,
+    "flipped_icon": false,
+    "rtl_enforced": false,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 29,
+    "name": "Rectangle: Rounded Corners 28",
+    "fixed_contrast": false,
+    "snapped_icon": true,
+    "flipped_icon": false,
+    "rtl_enforced": false,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 28,
+    "name": "Rectangle: Rounded Corners 27",
+    "fixed_contrast": false,
+    "snapped_icon": true,
+    "flipped_icon": false,
+    "rtl_enforced": false,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 12,
+    "name": "Rectangle 11",
+    "fixed_contrast": false,
+    "snapped_icon": true,
+    "flipped_icon": false,
+    "rtl_enforced": false,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 13,
+    "name": "Rectangle 12",
+    "fixed_contrast": false,
+    "snapped_icon": true,
+    "flipped_icon": false,
+    "rtl_enforced": false,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 15,
+    "name": "Isosceles Triangle 14",
+    "fixed_contrast": false,
+    "snapped_icon": true,
+    "flipped_icon": false,
+    "rtl_enforced": false,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 16,
+    "name": "Rectangle 15",
+    "fixed_contrast": false,
+    "snapped_icon": true,
+    "flipped_icon": false,
+    "rtl_enforced": false,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 17,
+    "name": "Rectangle 16",
+    "fixed_contrast": false,
+    "snapped_icon": true,
+    "flipped_icon": false,
+    "rtl_enforced": false,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 18,
+    "name": "Rectangle 17",
+    "fixed_contrast": false,
+    "snapped_icon": true,
+    "flipped_icon": false,
+    "rtl_enforced": false,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 21,
+    "name": "Rectangle 20",
+    "fixed_contrast": false,
+    "snapped_icon": true,
+    "flipped_icon": false,
+    "rtl_enforced": false,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 22,
+    "name": "Rectangle 21",
+    "fixed_contrast": false,
+    "snapped_icon": true,
+    "flipped_icon": false,
+    "rtl_enforced": false,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 27,
+    "name": "Rectangle 26",
+    "fixed_contrast": false,
+    "snapped_icon": true,
+    "flipped_icon": false,
+    "rtl_enforced": false,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 41,
+    "name": "Graphic 40",
+    "fixed_contrast": false,
+    "snapped_icon": true,
+    "flipped_icon": false,
+    "rtl_enforced": false,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 42,
+    "name": "Graphic 41",
+    "fixed_contrast": false,
+    "snapped_icon": true,
+    "flipped_icon": false,
+    "rtl_enforced": false,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 43,
+    "name": "Picture 42",
+    "fixed_contrast": false,
+    "snapped_icon": true,
+    "flipped_icon": false,
+    "rtl_enforced": false,
+    "notes": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 44,
+    "name": "Picture 43",
+    "fixed_contrast": false,
+    "snapped_icon": true,
+    "flipped_icon": false,
+    "rtl_enforced": false,
+    "notes": ""
+  }
+]

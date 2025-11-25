@@ -1,0 +1,54 @@
+{
+  "input_file": "/Users/djioni/KSA-AI-TRANSLATE/jobs/sWrJizN_1FlOd12vmXewO/design.pptx",
+  "total_slides": 1,
+  "analyzed_slides": 1,
+  "model": "gpt-4o-mini-2024-07-18",
+  "slides": [
+    {
+      "text_visibility": {
+        "score": 8,
+        "issues": [
+          "Some text in light colors may reduce readability against the background."
+        ]
+      },
+      "rtl_layout": {
+        "score": 9,
+        "issues": [
+          "Most text boxes are right-aligned, but one element could be better positioned."
+        ]
+      },
+      "icon_positioning": {
+        "score": 7,
+        "issues": [
+          "Two icons are positioned on the left; icons typically should be on the right side of the text."
+        ]
+      },
+      "directional_elements": {
+        "score": 8,
+        "issues": [
+          "Arrows are mostly correctly oriented, though one is slightly ambiguous."
+        ]
+      },
+      "spacing": {
+        "score": 9,
+        "issues": [
+          "Good spacing overall, but minor adjustments could enhance layout."
+        ]
+      },
+      "overall_score": 7,
+      "summary": "The slide is mostly well-designed but requires some adjustments for full alignment with RTL standards and visibility improvement.",
+      "recommendations": [
+        "Adjust text colors for better contrast against the background.",
+        "Reposition any left-side icons to the right of the text.",
+        "Ensure all elements are consistently aligned and spaced."
+      ],
+      "slide": 1,
+      "ok": true,
+      "model": "gpt-4o-mini-2024-07-18"
+    }
+  ],
+  "summary": {
+    "all_passed": false,
+    "average_score": 7.0
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "error": "Vision QA failed",
+  "details": "Error: No API key provided. Use --api-key or set ANTHROPIC_API_KEY environment variable\n"
+}

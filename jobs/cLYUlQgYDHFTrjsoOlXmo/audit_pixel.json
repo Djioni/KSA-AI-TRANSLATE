@@ -1,0 +1,930 @@
+[
+  {
+    "slide": 1,
+    "shape_id": 30,
+    "name": "Rectangle: Rounded Corners 29",
+    "bbox_px": [
+      119,
+      1418,
+      2894,
+      1737
+    ],
+    "measured_fg": [
+      0,
+      115,
+      175
+    ],
+    "measured_bg": [
+      234,
+      239,
+      241
+    ],
+    "ratio_before": 4.449,
+    "ratio_after": 12.586,
+    "fixed_contrast": true,
+    "applied_color": [
+      13,
+      42,
+      71
+    ],
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 31,
+    "name": "Rectangle: Rounded Corners 30",
+    "bbox_px": [
+      119,
+      1778,
+      2894,
+      2097
+    ],
+    "measured_fg": [
+      25,
+      176,
+      198
+    ],
+    "measured_bg": [
+      234,
+      239,
+      241
+    ],
+    "ratio_before": 2.246,
+    "ratio_after": 12.586,
+    "fixed_contrast": true,
+    "applied_color": [
+      13,
+      42,
+      71
+    ],
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 29,
+    "name": "Rectangle: Rounded Corners 28",
+    "bbox_px": [
+      119,
+      1057,
+      2894,
+      1376
+    ],
+    "measured_fg": [
+      0,
+      86,
+      131
+    ],
+    "measured_bg": [
+      234,
+      239,
+      241
+    ],
+    "ratio_before": 6.813,
+    "ratio_after": 6.813,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 28,
+    "name": "Rectangle: Rounded Corners 27",
+    "bbox_px": [
+      119,
+      543,
+      2894,
+      1016
+    ],
+    "measured_fg": [
+      21,
+      52,
+      90
+    ],
+    "measured_bg": [
+      234,
+      239,
+      241
+    ],
+    "ratio_before": 10.843,
+    "ratio_after": 10.843,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 2,
+    "name": "Title 1",
+    "bbox_px": [
+      194,
+      0,
+      3881,
+      278
+    ],
+    "measured_fg": [
+      21,
+      52,
+      90
+    ],
+    "measured_bg": [
+      255,
+      255,
+      255
+    ],
+    "ratio_before": 12.569,
+    "ratio_after": 12.569,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 257,
+    "name": "TextBox 256",
+    "bbox_px": [
+      1624,
+      345,
+      3881,
+      420
+    ],
+    "measured_fg": [
+      21,
+      52,
+      90
+    ],
+    "measured_bg": [
+      255,
+      255,
+      255
+    ],
+    "ratio_before": 12.569,
+    "ratio_after": 12.569,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 12,
+    "name": "Rectangle 11",
+    "bbox_px": [
+      1952,
+      1417,
+      3807,
+      1736
+    ],
+    "measured_fg": [
+      255,
+      255,
+      255
+    ],
+    "measured_bg": [
+      242,
+      242,
+      242
+    ],
+    "ratio_before": 1.119,
+    "ratio_after": 13.033,
+    "fixed_contrast": true,
+    "applied_color": [
+      13,
+      42,
+      71
+    ],
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 13,
+    "name": "Rectangle 12",
+    "bbox_px": [
+      1950,
+      1057,
+      3805,
+      1376
+    ],
+    "measured_fg": [
+      255,
+      255,
+      255
+    ],
+    "measured_bg": [
+      242,
+      242,
+      242
+    ],
+    "ratio_before": 1.119,
+    "ratio_after": 13.033,
+    "fixed_contrast": true,
+    "applied_color": [
+      13,
+      42,
+      71
+    ],
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 15,
+    "name": "Isosceles Triangle 14",
+    "bbox_px": [
+      1950,
+      543,
+      3806,
+      1016
+    ],
+    "measured_fg": [
+      21,
+      52,
+      90
+    ],
+    "measured_bg": [
+      242,
+      242,
+      242
+    ],
+    "ratio_before": 11.228,
+    "ratio_after": 11.228,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 16,
+    "name": "Rectangle 15",
+    "bbox_px": [
+      2274,
+      740,
+      3296,
+      949
+    ],
+    "measured_fg": [
+      255,
+      255,
+      255
+    ],
+    "measured_bg": [
+      234,
+      239,
+      241
+    ],
+    "ratio_before": 1.159,
+    "ratio_after": 12.586,
+    "fixed_contrast": true,
+    "applied_color": [
+      13,
+      42,
+      71
+    ],
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 17,
+    "name": "Rectangle 16",
+    "bbox_px": [
+      1950,
+      1778,
+      3805,
+      2097
+    ],
+    "measured_fg": [
+      255,
+      255,
+      255
+    ],
+    "measured_bg": [
+      242,
+      242,
+      242
+    ],
+    "ratio_before": 1.119,
+    "ratio_after": 13.033,
+    "fixed_contrast": true,
+    "applied_color": [
+      13,
+      42,
+      71
+    ],
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 18,
+    "name": "Rectangle 17",
+    "bbox_px": [
+      194,
+      627,
+      1841,
+      931
+    ],
+    "measured_fg": [
+      21,
+      52,
+      90
+    ],
+    "measured_bg": [
+      234,
+      239,
+      241
+    ],
+    "ratio_before": 10.843,
+    "ratio_after": 10.843,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 21,
+    "name": "Rectangle 20",
+    "bbox_px": [
+      170,
+      1870,
+      1841,
+      2045
+    ],
+    "measured_fg": [
+      0,
+      0,
+      0
+    ],
+    "measured_bg": [
+      234,
+      239,
+      241
+    ],
+    "ratio_before": 18.115,
+    "ratio_after": 18.115,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 22,
+    "name": "Rectangle 21",
+    "bbox_px": [
+      196,
+      1447,
+      1843,
+      1702
+    ],
+    "measured_fg": [
+      0,
+      115,
+      175
+    ],
+    "measured_bg": [
+      234,
+      239,
+      241
+    ],
+    "ratio_before": 4.449,
+    "ratio_after": 12.586,
+    "fixed_contrast": true,
+    "applied_color": [
+      13,
+      42,
+      71
+    ],
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 27,
+    "name": "Rectangle 26",
+    "bbox_px": [
+      170,
+      1154,
+      1841,
+      1287
+    ],
+    "measured_fg": [
+      0,
+      115,
+      175
+    ],
+    "measured_bg": [
+      234,
+      239,
+      241
+    ],
+    "ratio_before": 4.449,
+    "ratio_after": 12.586,
+    "fixed_contrast": true,
+    "applied_color": [
+      13,
+      42,
+      71
+    ],
+    "flipped_icon": false,
+    "snapped_icon": false,
+    "note": ""
+  },
+  {
+    "slide": 1,
+    "shape_id": 30,
+    "name": "Rectangle: Rounded Corners 29",
+    "bbox_px": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "measured_fg": [
+      0,
+      0,
+      0
+    ],
+    "measured_bg": [
+      0,
+      0,
+      0
+    ],
+    "ratio_before": 0.0,
+    "ratio_after": 0.0,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": true,
+    "note": "snapped to shape 30"
+  },
+  {
+    "slide": 1,
+    "shape_id": 31,
+    "name": "Rectangle: Rounded Corners 30",
+    "bbox_px": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "measured_fg": [
+      0,
+      0,
+      0
+    ],
+    "measured_bg": [
+      0,
+      0,
+      0
+    ],
+    "ratio_before": 0.0,
+    "ratio_after": 0.0,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": true,
+    "note": "snapped to shape 31"
+  },
+  {
+    "slide": 1,
+    "shape_id": 29,
+    "name": "Rectangle: Rounded Corners 28",
+    "bbox_px": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "measured_fg": [
+      0,
+      0,
+      0
+    ],
+    "measured_bg": [
+      0,
+      0,
+      0
+    ],
+    "ratio_before": 0.0,
+    "ratio_after": 0.0,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": true,
+    "note": "snapped to shape 29"
+  },
+  {
+    "slide": 1,
+    "shape_id": 28,
+    "name": "Rectangle: Rounded Corners 27",
+    "bbox_px": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "measured_fg": [
+      0,
+      0,
+      0
+    ],
+    "measured_bg": [
+      0,
+      0,
+      0
+    ],
+    "ratio_before": 0.0,
+    "ratio_after": 0.0,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": true,
+    "note": "snapped to shape 28"
+  },
+  {
+    "slide": 1,
+    "shape_id": 12,
+    "name": "Rectangle 11",
+    "bbox_px": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "measured_fg": [
+      0,
+      0,
+      0
+    ],
+    "measured_bg": [
+      0,
+      0,
+      0
+    ],
+    "ratio_before": 0.0,
+    "ratio_after": 0.0,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": true,
+    "note": "snapped to shape 12"
+  },
+  {
+    "slide": 1,
+    "shape_id": 13,
+    "name": "Rectangle 12",
+    "bbox_px": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "measured_fg": [
+      0,
+      0,
+      0
+    ],
+    "measured_bg": [
+      0,
+      0,
+      0
+    ],
+    "ratio_before": 0.0,
+    "ratio_after": 0.0,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": true,
+    "note": "snapped to shape 13"
+  },
+  {
+    "slide": 1,
+    "shape_id": 15,
+    "name": "Isosceles Triangle 14",
+    "bbox_px": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "measured_fg": [
+      0,
+      0,
+      0
+    ],
+    "measured_bg": [
+      0,
+      0,
+      0
+    ],
+    "ratio_before": 0.0,
+    "ratio_after": 0.0,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": true,
+    "note": "snapped to shape 28"
+  },
+  {
+    "slide": 1,
+    "shape_id": 16,
+    "name": "Rectangle 15",
+    "bbox_px": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "measured_fg": [
+      0,
+      0,
+      0
+    ],
+    "measured_bg": [
+      0,
+      0,
+      0
+    ],
+    "ratio_before": 0.0,
+    "ratio_after": 0.0,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": true,
+    "note": "snapped to shape 28"
+  },
+  {
+    "slide": 1,
+    "shape_id": 17,
+    "name": "Rectangle 16",
+    "bbox_px": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "measured_fg": [
+      0,
+      0,
+      0
+    ],
+    "measured_bg": [
+      0,
+      0,
+      0
+    ],
+    "ratio_before": 0.0,
+    "ratio_after": 0.0,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": true,
+    "note": "snapped to shape 17"
+  },
+  {
+    "slide": 1,
+    "shape_id": 18,
+    "name": "Rectangle 17",
+    "bbox_px": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "measured_fg": [
+      0,
+      0,
+      0
+    ],
+    "measured_bg": [
+      0,
+      0,
+      0
+    ],
+    "ratio_before": 0.0,
+    "ratio_after": 0.0,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": true,
+    "note": "snapped to shape 28"
+  },
+  {
+    "slide": 1,
+    "shape_id": 21,
+    "name": "Rectangle 20",
+    "bbox_px": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "measured_fg": [
+      0,
+      0,
+      0
+    ],
+    "measured_bg": [
+      0,
+      0,
+      0
+    ],
+    "ratio_before": 0.0,
+    "ratio_after": 0.0,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": true,
+    "note": "snapped to shape 31"
+  },
+  {
+    "slide": 1,
+    "shape_id": 22,
+    "name": "Rectangle 21",
+    "bbox_px": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "measured_fg": [
+      0,
+      0,
+      0
+    ],
+    "measured_bg": [
+      0,
+      0,
+      0
+    ],
+    "ratio_before": 0.0,
+    "ratio_after": 0.0,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": true,
+    "note": "snapped to shape 30"
+  },
+  {
+    "slide": 1,
+    "shape_id": 27,
+    "name": "Rectangle 26",
+    "bbox_px": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "measured_fg": [
+      0,
+      0,
+      0
+    ],
+    "measured_bg": [
+      0,
+      0,
+      0
+    ],
+    "ratio_before": 0.0,
+    "ratio_after": 0.0,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": true,
+    "note": "snapped to shape 29"
+  },
+  {
+    "slide": 1,
+    "shape_id": 41,
+    "name": "Graphic 40",
+    "bbox_px": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "measured_fg": [
+      0,
+      0,
+      0
+    ],
+    "measured_bg": [
+      0,
+      0,
+      0
+    ],
+    "ratio_before": 0.0,
+    "ratio_after": 0.0,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": true,
+    "note": "snapped to shape 28"
+  },
+  {
+    "slide": 1,
+    "shape_id": 42,
+    "name": "Graphic 41",
+    "bbox_px": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "measured_fg": [
+      0,
+      0,
+      0
+    ],
+    "measured_bg": [
+      0,
+      0,
+      0
+    ],
+    "ratio_before": 0.0,
+    "ratio_after": 0.0,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": true,
+    "note": "snapped to shape 30"
+  },
+  {
+    "slide": 1,
+    "shape_id": 43,
+    "name": "Picture 42",
+    "bbox_px": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "measured_fg": [
+      0,
+      0,
+      0
+    ],
+    "measured_bg": [
+      0,
+      0,
+      0
+    ],
+    "ratio_before": 0.0,
+    "ratio_after": 0.0,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": true,
+    "note": "snapped to shape 29"
+  },
+  {
+    "slide": 1,
+    "shape_id": 44,
+    "name": "Picture 43",
+    "bbox_px": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "measured_fg": [
+      0,
+      0,
+      0
+    ],
+    "measured_bg": [
+      0,
+      0,
+      0
+    ],
+    "ratio_before": 0.0,
+    "ratio_after": 0.0,
+    "fixed_contrast": false,
+    "applied_color": null,
+    "flipped_icon": false,
+    "snapped_icon": true,
+    "note": "snapped to shape 31"
+  }
+]

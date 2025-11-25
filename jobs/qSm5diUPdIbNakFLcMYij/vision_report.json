@@ -1,0 +1,50 @@
+{
+  "input_file": "/Users/djioni/KSA-AI-TRANSLATE/jobs/qSm5diUPdIbNakFLcMYij/design.pptx",
+  "total_slides": 1,
+  "analyzed_slides": 1,
+  "model": "gpt-4o-mini-2024-07-18",
+  "slides": [
+    {
+      "text_visibility": {
+        "score": 8,
+        "issues": [
+          "Some areas with low contrast between text and background",
+          "Text size may be small in certain sections"
+        ]
+      },
+      "rtl_layout": {
+        "score": 9,
+        "issues": []
+      },
+      "icon_positioning": {
+        "score": 7,
+        "issues": [
+          "Some icons are not optimally placed for RTL"
+        ]
+      },
+      "directional_elements": {
+        "score": 8,
+        "issues": [
+          "A few directional arrows could be more aligned with RTL orientation"
+        ]
+      },
+      "spacing": {
+        "score": 9,
+        "issues": []
+      },
+      "overall_score": 8,
+      "summary": "The slide is generally well-designed with a few issues in text contrast and icon positioning.",
+      "recommendations": [
+        "Enhance text contrast, especially in areas with light backgrounds.",
+        "Consider repositioning icons to ensure they complement RTL layout."
+      ],
+      "slide": 1,
+      "ok": true,
+      "model": "gpt-4o-mini-2024-07-18"
+    }
+  ],
+  "summary": {
+    "all_passed": true,
+    "average_score": 8.0
+  }
+}

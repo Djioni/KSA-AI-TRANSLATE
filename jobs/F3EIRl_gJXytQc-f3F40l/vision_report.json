@@ -1,0 +1,50 @@
+{
+  "input_file": "/Users/djioni/KSA-AI-TRANSLATE/jobs/F3EIRl_gJXytQc-f3F40l/design.pptx",
+  "total_slides": 1,
+  "analyzed_slides": 1,
+  "model": "gpt-4o-mini-2024-07-18",
+  "slides": [
+    {
+      "text_visibility": {
+        "score": 8,
+        "issues": [
+          "Some text may blend with the background due to similar tones."
+        ]
+      },
+      "rtl_layout": {
+        "score": 10,
+        "issues": []
+      },
+      "icon_positioning": {
+        "score": 9,
+        "issues": [
+          "One icon appears left-aligned; should be right-aligned for consistency."
+        ]
+      },
+      "directional_elements": {
+        "score": 10,
+        "issues": []
+      },
+      "spacing": {
+        "score": 8,
+        "issues": [
+          "Some elements appear closely spaced, which might be visually overwhelming."
+        ]
+      },
+      "overall_score": 8,
+      "summary": "The slide is mostly well-designed but has issues with text visibility and some spacing concerns.",
+      "recommendations": [
+        "Enhance contrast for more readability on text.",
+        "Ensure all icons are consistently right-aligned.",
+        "Adjust spacing between elements for better visual flow."
+      ],
+      "slide": 1,
+      "ok": true,
+      "model": "gpt-4o-mini-2024-07-18"
+    }
+  ],
+  "summary": {
+    "all_passed": true,
+    "average_score": 8.0
+  }
+}

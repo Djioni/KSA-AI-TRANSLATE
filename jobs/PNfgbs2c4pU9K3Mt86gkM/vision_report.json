@@ -1,0 +1,47 @@
+{
+  "input_file": "/Users/djioni/KSA-AI-TRANSLATE/jobs/PNfgbs2c4pU9K3Mt86gkM/design.pptx",
+  "total_slides": 1,
+  "analyzed_slides": 1,
+  "model": "gpt-4o-mini-2024-07-18",
+  "slides": [
+    {
+      "text_visibility": {
+        "score": 8,
+        "issues": [
+          "Some text against light background may reduce readability."
+        ]
+      },
+      "rtl_layout": {
+        "score": 10,
+        "issues": []
+      },
+      "icon_positioning": {
+        "score": 10,
+        "issues": []
+      },
+      "directional_elements": {
+        "score": 10,
+        "issues": []
+      },
+      "spacing": {
+        "score": 9,
+        "issues": [
+          "Slight overlap in text boxes might occur if text length increases."
+        ]
+      },
+      "overall_score": 9,
+      "summary": "Overall, the slide is well-designed with minor issues in text visibility and spacing.",
+      "recommendations": [
+        "Improve contrast for better text readability against light backgrounds.",
+        "Ensure text boxes have enough spacing to prevent overlap with longer text."
+      ],
+      "slide": 1,
+      "ok": true,
+      "model": "gpt-4o-mini-2024-07-18"
+    }
+  ],
+  "summary": {
+    "all_passed": true,
+    "average_score": 9.0
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "input_file": "/Users/djioni/KSA-AI-TRANSLATE/jobs/b0irq6gbXOZLQrtn1xQmH/design.pptx",
+  "total_slides": 1,
+  "analyzed_slides": 1,
+  "model": "gpt-4o-mini-2024-07-18",
+  "slides": [
+    {
+      "text_visibility": {
+        "score": 9,
+        "issues": []
+      },
+      "rtl_layout": {
+        "score": 8,
+        "issues": [
+          "Some text boxes are not right-aligned."
+        ]
+      },
+      "icon_positioning": {
+        "score": 7,
+        "issues": [
+          "Icons are not placed on the right side of the text."
+        ]
+      },
+      "directional_elements": {
+        "score": 9,
+        "issues": []
+      },
+      "spacing": {
+        "score": 8,
+        "issues": [
+          "Some elements appear close together, causing potential overlap."
+        ]
+      },
+      "overall_score": 8,
+      "summary": "The slide is mostly well-designed but needs adjustments for RTL alignment and icon positioning.",
+      "recommendations": [
+        "Ensure all text boxes are right-aligned to adhere to RTL conventions.",
+        "Move icons to the right side of their corresponding text for better alignment.",
+        "Increase spacing between closely positioned elements to enhance clarity."
+      ],
+      "slide": 1,
+      "ok": true,
+      "model": "gpt-4o-mini-2024-07-18"
+    }
+  ],
+  "summary": {
+    "all_passed": true,
+    "average_score": 8.0
+  }
+}
